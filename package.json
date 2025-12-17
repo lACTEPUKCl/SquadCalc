@@ -77,5 +77,8 @@
   },
   "overrides": {
     "phin": "^3.7.1"
+  },
+  "dependencies": {
+    "nvm": "^0.0.4"
   }
 }
