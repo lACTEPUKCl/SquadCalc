@@ -1,4 +1,4 @@
-name: Build, Push and Deploy (SquadCalc)
+name: Build and push image
 
 on:
   push:
@@ -43,34 +43,11 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v5
+        env:
+          ACTIONS_RUNTIME_TOKEN: ""
         with:
           context: .
           file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-  deploy:
-    needs: build-and-push-image
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy on server (docker compose pull/up)
-        uses: appleboy/ssh-action@v1.2.4
-        with:
-          host: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            set -e
-
-            cd /root/host
-
-            # на всякий случай логин в ghcr (чтобы pull всегда проходил, даже если образ приватный)
-            docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} -p ${{ secrets.GHCR_TOKEN }}
-
-            docker compose pull squadcalc
-            docker compose up -d squadcalc
-
-            docker image prune -f
