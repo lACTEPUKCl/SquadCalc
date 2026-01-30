@@ -106,7 +106,7 @@ export default class SquadServersBrowser {
         const searchInput = document.getElementById("serverSearch");
         tbody.innerHTML = `
             <tr>
-                <td colspan="7" style="text-align: center; padding: 40px;">
+                <td colspan="6" style="text-align: center; padding: 40px;">
                     <p>${i18next.t("loadingServers", { ns: "common" })}</p>
                 </td>
             </tr>
@@ -252,7 +252,7 @@ export default class SquadServersBrowser {
         if (team) {
             return `<img title="${label}" src="/img/flags/${team}.webp" alt="${team}" class="flag-icon">`;
         } else {
-            return "-";
+            return `<img title="${label}" src="/img/flags/unknown.webp" alt="Unknown" class="flag-icon">`;
         }
     }
 
@@ -294,15 +294,17 @@ export default class SquadServersBrowser {
                             ${server.attributes.details.map}<br>
                             ${nextLayer}
                         </td>
-                        <td class="teamFlags">${this.getTeamHTML(server.team1, server.attributes.details.squad_teamOne)}</td>
-                        <td class="teamFlags">${this.getTeamHTML(server.team2, server.attributes.details.squad_teamTwo)}</td>
+                        <td class="teamFlags">
+                            ${this.getTeamHTML(server.team1, server.attributes.details.squad_teamOne)}
+                            ${this.getTeamHTML(server.team2, server.attributes.details.squad_teamTwo)}
+                        </td>
                     </tr>
                 `;
             });
         } else {
             rows = `
                 <tr>
-                    <td colspan="7" style="text-align: center; padding: 40px;">
+                    <td colspan="6" style="text-align: center; padding: 40px;">
                         ${i18next.t("noServersFound", { ns: "common" })}
                     </td>
                 </tr>
@@ -355,8 +357,9 @@ export default class SquadServersBrowser {
                             <th class="sortable" data-sort="map" data-i18n="common:currentMap">
                                 ${i18next.t("currentMap", { ns: "common" })} <span class="sort-indicator">⇅</span>
                             </th>
-                            <th class="teamFlags" data-i18n="common:team1">${i18next.t("team1", { ns: "common" })}</th>
-                            <th class="teamFlags" data-i18n="common:team2">${i18next.t("team2", { ns: "common" })}</th>
+                            <th class="" data-i18n="common:teams">
+                                ${i18next.t("teams", { ns: "common" })}
+                            </th>
                         </tr>
                     </thead>
                     <tbody id="serversTableBody"></tbody>

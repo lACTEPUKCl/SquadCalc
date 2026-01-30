@@ -9,15 +9,10 @@
     pointer-events: none!important;
 }
 
-.tippy-box {
-    //cursor: auto;
-    pointer-events: auto !important;
-}
-
 .leaflet-pane.leaflet-ie10-visual-click-pane-pane { z-index: 300; }
 
 .tippy-box {
-    //cursor: auto;
+    cursor: auto;
     pointer-events: auto !important;
 }
 
