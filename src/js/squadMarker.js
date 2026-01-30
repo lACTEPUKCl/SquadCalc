@@ -593,6 +593,7 @@ export const squadStratMarker = squadMarker.extend({
             fillOpacity: 0,
             weight: options.circles2Weight || 3,
             autoPan: false,
+            className: "circles",
         };
         this.minDistCircleOn = {
             radius: options.circles1Size || 0,
@@ -601,6 +602,7 @@ export const squadStratMarker = squadMarker.extend({
             fillOpacity: 0,
             weight: options.circles1Weight || 4,
             autoPan: false,
+            className: "circles",
         };
         
 
