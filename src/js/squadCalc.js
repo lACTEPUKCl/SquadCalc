@@ -1,5 +1,5 @@
-import { MAPS, initMapsProperties } from "./data/maps.js";
-import { WEAPONS, WEAPONSTYPE } from "./data/weapons.js";
+import { MAPS, initMapsProperties } from "../data/maps.js";
+import { WEAPONS, WEAPONSTYPE } from "../data/weapons.js";
 import { squadMinimap } from "./squadMinimap.js";
 import { Weapon } from "./squadWeapons.js";
 import { animateCSS, animateCalc } from "./animations.js";
@@ -60,7 +60,7 @@ export default class SquadCalc {
         this.loadTheme();
         checkApiHealth();
         initWebSocket();
-        console.log(`SquadCalc v${this.version} Loaded!`);
+        console.log(`SquadCalc v${this.version} Loaded! 🎯`);
     }
 
     /**

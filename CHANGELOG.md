@@ -1,8 +1,34 @@
 
+# <img src="https://img.shields.io/badge/-minor%20release-cd6f68?style=for-the-badge"> **42.1.0** *(2026-01-XX)*
+
+</br><img src="https://img.shields.io/badge/-new%20features-green">  
+- You can now mark a server as favorite ⭐, making it appear top of the servers lists at any time *(thanks Matador)*
+- You can now duplicate a map marker holding `Alt` while dragging it *(thanks Karasiq)*
+- Added 4 more colors to drawing tools *(thanks Snowflake)*
+- Added tunnels on terrain map layer for Black Coast, Skorpo and Fallujah *(thanks pickletrack)*
+
+</br><img src="https://img.shields.io/badge/-%20improv%20-orange"> 
+- Improved teams collumn to be more compact in Server Browser
+- Added a placeholder flag for unknown units in Server Browser
+
+</br><img src="https://img.shields.io/badge/-bug%20fixes-b22">  
+- Fixed toast icons being stretched on small screens
+- Fixed AAS flags losing their border when focused by a mouse click (fix [#432](https://github.com/sh4rkman/SquadCalc/issues/432))
+- Fixed shape context menu staying open when main menu close
+- Fixed mouse cursor behaviour when using right clic context menu (fix [#427](https://github.com/sh4rkman/SquadCalc/issues/427))
+- Fixed a bug in server browser where the list was repopulating when sorting a collumn (fix [#433](https://github.com/sh4rkman/SquadCalc/issues/433))
+- Fixed some markers that were blocking the mouseover on shapes
+
+
+</br></br><!-- CHANGELOG SPLIT MARKER -->
+
+
 # <img src="https://img.shields.io/badge/-minor%20release-cd6f68?style=for-the-badge"> **42.0.5** *(2026-01-17)*
 
 </br><img src="https://img.shields.io/badge/-bug%20fixes-b22">  
 - M1O-120-RTF1 now use milliradians as intended (Thanks Sh1nS0u_!)
+
+</br></br><!-- CHANGELOG SPLIT MARKER -->
 
 # <img src="https://img.shields.io/badge/-minor%20release-cd6f68?style=for-the-badge"> **42.0.4** *(2026-01-14)*
 
